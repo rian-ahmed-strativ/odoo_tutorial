@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- STEP 1: Bare‐bones search view -->
+  <record id="estate_property_search_view" model="ir.ui.view">
+    <field name="name">estate.property.search</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+        <search>
+             <filter name="available" string="Available"
+                domain="[('state','in',('new','offer_received'))]"/>
+              <field name="living_area" string="Living Area (min)"
+                  filter_domain="[('living_area', '>=', self)]"/>
+            <field name="name" string="Title"/>
+            <field name="postcode" string="Postcode"/>
+            <field name="property_type_id" string="Property Type"/>
+            <field name="expected_price" string="Expected Price"/>
+            <field name="bedrooms" string="Bedrooms"/>
+            <field name="living_area" string="Living Area (sqm)"/>
+            <field name="facades" string="Facades"/>
+
+                    <separator/>
+            <group expand="0" string="Group By">
+                    <filter name="group_postcode" string="Postcode" 
+                    context="{'group_by': 'postcode'}"/>
+            </group>
+        </search>
+    </field>
+  </record>
+</odoo>
