@@ -44,6 +44,25 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_set_sold"
+                    type="object"
+                    class="oe_highlight"
+                    string="Sold"
+                    attrs="{
+                    'invisible': [
+                        ('state', '!=', 'offer_accepted')
+                    ]
+                    }"/>
+            <!-- Cancel button, hidden after sold or already canceled -->
+                    <button name="action_cancel"
+                            type="object"
+                            class="oe_danger"
+                            string="Cancel"
+                            attrs="{
+                            'invisible': [
+                                ('state', 'in', ['sold','canceled'])
+                            ]
+                            }"/>
                     <field name="state" widget="statusbar"
                         statusbar_visible="new,offer_received,offer_accepted,sold,canceled"
                         clickable="true"/>

@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_estate_property_form_inherit_account" model="ir.ui.view">
+        <field name="name">estate.property.form.inherit.account</field>
+        <field name="model">estate.property</field>
+        <field name="inherit_id" ref="real_estate.view_estate_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']" position="inside">
+                <field name="invoice_id" string="Property Invoice" widget="many2one_btn"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_estate_property_form_inherit_account" model="ir.ui.view">
+        <field name="name">estate.property.form.inherit.account</field>
+        <field name="model">estate.property</field>
+        <field name="inherit_id" ref="real_estate.view_estate_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="invoice_id" string="Invoice" widget="many2one_btn"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
