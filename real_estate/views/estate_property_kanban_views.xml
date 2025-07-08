@@ -4,7 +4,7 @@
         <field name="name">estate.property.kanban</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="property_type_id">
+            <kanban default_group_by="property_type_id" disable_drag_drop="true">
 
                 <field name="name"/>
                 <field name="expected_price"/>
